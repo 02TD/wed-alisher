@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аяжан — Қыз Ұзату Шақыруы</title>
     
-    <!-- Google Fonts: Су жаңа люкс және заманауи шрифттер жинағы -->
+    <!-- Google Fonts: Фотодағыдай люкс әрі нәзік serif шрифттер жинағы -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Playball&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Playball&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -23,6 +23,7 @@
         }
 
         * {
+            box-shadow: none;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -48,7 +49,14 @@
             padding: 15px;
         }
 
-        /* --- 🎵 АЙНАЛМАЛЫ МУЗЫКА БАТЫРМАСЫ --- */
+        @font-face {
+            font-family: 'AsylbekM02Shelley';
+            src: url('AsylbekM02Shelley.kz.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* --- 🎵 МУЗЫКА БАТЫРМАСЫ --- */
         .circular-music {
             position: fixed;
             top: 25px;
@@ -97,17 +105,15 @@
             position: relative;
         }
 
-        /* 🖋️ ЖАҢА ТАЛҒАМПАЗ БАС ТАҚЫРЫП ШРИФТІ (CORMORANT GARAMOND) */
         .premium-display-font {
             font-family: 'Cormorant Garamond', serif;
             font-size: 46px;
             font-weight: 300;
             color: var(--taupe);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             line-height: 1.2;
         }
 
-        /* 📜 ӨЛЕҢ МЕН АҚ БАТАҒА АРНАЛҒАН ЖАҢА КАЛИГРАФИЯ (PLAYBALL) */
         .calligraphy-poem-font {
             font-family: 'Playball', cursive;
             font-size: 24px;
@@ -133,7 +139,6 @@
             font-weight: 300;
         }
 
-        /* --- ВЕКТОРЛЫҚ ҚАЗАҚ ОЮЛАРЫ --- */
         .kazakh-pattern {
             width: 140px;
             height: auto;
@@ -141,43 +146,37 @@
             opacity: 0.4;
         }
 
-        /* --- 1. МҰҚАБА (COVER PAGE) --- */
+        /* --- 1. МҰҚАБА (COVER PAGE) - ФОТОДАҒЫ СТИЛЬ --- */
         .cover-page {
             height: 95vh;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.35)), 
+            background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.5)), 
                         url('shaku.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: flex-end; 
             align-items: center;
-            padding-top: 15vh;
+            padding-bottom: 14vh; 
             position: relative;
             margin-bottom: 25px;
             border: 1px solid rgba(163, 147, 130, 0.15);
         }
-        .cover-monogram {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 70px;
-            font-weight: 300;
-            color: var(--taupe);
-            opacity: 0.7;
-            line-height: 1;
-            letter-spacing: 4px;
-        }
+        
+        /* Фотодағыдай нәзік сызық */
         .cover-line {
-            width: 140px;
+            width: 100px;
             height: 1px;
             background-color: var(--taupe);
-            opacity: 0.35;
-            margin: 15px 0;
+            opacity: 0.4;
+            margin: 12px 0 20px 0;
         }
+
         .scroll-down-arrow {
             position: absolute;
             right: 30px;
             top: 42%;
             width: 44px;
             height: 44px;
-            background-color: rgba(163, 147, 130, 0.5);
+            background-color: rgba(163, 147, 130, 0.4);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -192,7 +191,7 @@
             60% { transform: translateY(-3px); }
         }
 
-        /* --- КҮНТІЗБЕ БӨЛІМІ (ТАМЫЗ 2026) --- */
+        /* --- КҮНТІЗБЕ --- */
         .cal-header-strip {
             border-top: 1px solid var(--taupe);
             border-bottom: 1px solid var(--taupe);
@@ -222,7 +221,7 @@
             border-radius: 50%;
         }
 
-        /* --- ТАЙМЕР БАННЕР --- */
+        /* --- ТАЙМЕР --- */
         .timer-banner {
             height: 380px;
             background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), 
@@ -310,7 +309,7 @@
             color: var(--text-dark);
         }
 
-        /* --- NAV PANEL --- */
+        /* --- КАРТА БАННЕР --- */
         .nav-banner-box {
             height: 180px;
             background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
@@ -332,7 +331,7 @@
             font-weight: 400;
         }
 
-        /* --- FORM --- */
+        /* --- ФОРМА ЕЛЕМЕНТТЕРІ --- */
         .form-block-element {
             text-align: left;
             margin-bottom: 18px;
@@ -384,14 +383,14 @@
 </head>
 <body>
 
-    <!-- АУДИО ОЙНАТҚЫШЫ -->
+    <!-- АУДИО -->
     <audio id="weddingMusicTrack" loop>
-        <source src="https://d11.drivemusic.me/dl/_WtdqVAR0bexFCMFdnYtcg/1779606460/download_music/2024/12/miras-zhugunusov-zymyran.mp3" type="audio/mp3">
+        <source src="https://agugai.kz/uploads/2020/04/Zhazira-Bairbekova-Indira-Elemes-Uzatu-agugai.kz_.mp3" type="audio/mp3">
     </audio>
 
     <div class="phone-container">
 
-        <!-- 🎵 АЙНАЛМАЛЫ КРЕАТИВТІ МУЗЫКА БАТЫРМАСЫ -->
+        <!-- МУЗЫКА БАТЫРМАСЫ -->
         <div class="circular-music" id="musicPanelButton">
             <div class="music-center-dot" id="musicDotIndicator">♫</div>
             <svg class="circular-text" viewBox="0 0 100 100">
@@ -402,27 +401,27 @@
             </svg>
         </div>
 
-        <!-- 1. МҰҚАБА (COVER PAGE) -->
+        <!-- 1. МҰҚАБА (COVER PAGE) - ФОТОДАҒЫДАЙ ЛЮКС ДИЗАЙН -->
         <div class="cover-page">
-            <div class="cover-monogram">A & S</div>
-            <div class="cover-line"></div>
-            <h1 class="premium-display-font" style="font-size: 38px; text-transform: uppercase; letter-spacing: 6px;">Qyz uzatu</h1>
-            <span class="premium-display-font" style="font-size: 54px; margin-top: 10px; letter-spacing: 4px; font-weight: 400;">Аяжан</span>
-            <div class="cover-line" style="width: 60px;"></div>
             
+            <div class="cover-line"></div>
+            <!-- Аяжан есімі де дәл осы стильде үлкейтілді -->
+            <span class="premium-display-font" style="font-size: 100px; font-weight: 300; font-family: 'AsylbekM02Shelley'; color: var(--text-dark);">Аяжан</span>
+            <!-- Дәл скриншоттағыдай жіңішке, талғампаз әрі аралас әріпті люкс стиль -->
+            <h1 class="premium-display-font" style="font-size: 80px; letter-spacing: 1px; font-family: 'AsylbekM02Shelley'; font-weight: 300; color: var(--taupe);">Қыз ұзату</h1>
             <div class="scroll-down-arrow">
                 <i class="fa-solid fa-arrow-down"></i>
             </div>
         </div>
 
-        <!-- 2. ӨЛЕҢ ЖОЛДАРЫ БӨЛІМІ (ЖАҢА ЖҰМСАҚ КАЛИГРАФИЯ) -->
+        <!-- 2. ӨЛЕҢ ЖОЛДАРЫ БӨЛІМІ -->
         <div class="envelope-card">
             <svg class="kazakh-pattern" viewBox="0 0 100 30" fill="none" stroke="#A39382" stroke-width="1.2">
                 <path d="M10,15 C30,5 40,25 50,15 C60,25 70,5 90,15 M30,15 C35,5 45,5 50,15 C55,5 65,5 70,15" stroke-linecap="round"/>
                 <path d="M10,15 C20,25 25,25 30,15 M70,15 C75,25 80,25 90,15" stroke-linecap="round"/>
             </svg>
 
-            <div class="calligraphy-poem-font">
+            <div class="calligraphy-poem-font" style="font-family: 'AsylbekM02Shelley'; font-size: 29px;">
                 Қызым, асыл гүлім, арайлым,<br>
                 Шаңырақтың кіргізіп тұр шырайын.<br>
                 Сол құлыным бой жетіп бір қалыпты,<br>
@@ -437,13 +436,13 @@
         <!-- 3. ШАҚЫРУ МӘТІНІ -->
         <div class="envelope-card">
             <span class="plain-title">Сіздерді аяулы қызымыз</span>
-            <h2 class="premium-display-font" style="margin: 15px 0; font-size: 48px; font-weight: 400;">Аяжанның</h2>
+            <h2 class="premium-display-font" style="margin: 15px 0; font-size: 48px; font-family: 'AsylbekM02Shelley'; font-weight: 400;">Аяжанның</h2>
             <p class="desc-text">
                 ұзату тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!
             </p>
         </div>
 
-        <!-- 4. ТОЙ САЛТАНАТЫ МЕН КҮНТІЗБЕ -->
+        <!-- 4. КҮНТІЗБЕ -->
         <div class="envelope-card">
             <h3 class="premium-display-font" style="font-size: 32px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px;">Той салтанаты</h3>
             
@@ -489,7 +488,7 @@
             </div>
         </div>
 
-        <!-- 6. ТАЙМЛАЙН БАҒДАРЛАМА -->
+        <!-- 6. ТАЙМЛАЙН -->
         <div class="envelope-card">
             <h3 class="premium-display-font" style="font-size: 32px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px;">Той бағдарламасы</h3>
             
@@ -548,9 +547,10 @@
                     <label>Той иесіне кім боласыз?</label>
                     <select name="relation" class="ctrl-input-field" required>
                         <option value="" disabled selected>Таңдаңыз...</option>
-                        <option value="Қалыңдық туыстары">Қалыңдық тарапынан (Туыс / Әріптес)</option>
+                        <option value="Қалыңдық туыстары">Туыс</option>
                         <option value="Достары">Достары</option>
                         <option value="Құдалар">Құдалар</option>
+                        <option value="Құдалар">Әріптес</option>
                     </select>
                 </div>
 
@@ -579,9 +579,8 @@
 
     </div>
 
-    <!-- --- JAVASCRIPT ПАНЕЛІ --- -->
+    <!-- --- JAVASCRIPT --- -->
     <script>
-        // 1. GOOGLE SHEETS ИНТЕГРАЦИЯСЫ
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwNwxmHXCn9Hae7ncJMHpupAtWD0WCiVSNpx__ZSO3g5ujsXIz0rC5NkuFEp42o0pBihw/exec';
         const form = document.getElementById('googleSheetRsvpForm');
         const sendBtn = document.getElementById('formSubmitButton');
@@ -606,7 +605,6 @@
                 });
         });
 
-        // 2. КЕРІ САНАҚ ТАЙМЕРІ (22 ТАМЫЗ 2026)
         const weddingTargetDate = new Date(2026, 7, 22, 18, 0, 0).getTime();
 
         const timerClock = setInterval(() => {
@@ -627,7 +625,6 @@
             }
         }, 1000);
 
-        // 3. МУЗЫКА ОЙНАТУ ПАНЕЛІ
         const track = document.getElementById("weddingMusicTrack");
         const musicPanelButton = document.getElementById("musicPanelButton");
         const musicDotIndicator = document.getElementById("musicDotIndicator");
